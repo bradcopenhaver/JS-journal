@@ -8,4 +8,16 @@ Entry.prototype.wordCount = function() {
   return words.length;
 };
 
+Entry.prototype.vowelCount = function() {
+  var vowels = [];
+  vowels = this.body.match(/[AEIOU]/gi);
+  return vowels.length;
+}
+
+Entry.prototype.consonantCount = function() {
+  var vowels = [];
+  vowels = this.body.match(/[b-df-hj-np-tv-z]/gi);
+  return vowels.length;
+}
+
 exports.entryModule = Entry;

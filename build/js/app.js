@@ -9,6 +9,18 @@ Entry.prototype.wordCount = function() {
   return words.length;
 };
 
+Entry.prototype.vowelCount = function() {
+  var vowels = [];
+  vowels = this.body.match(/[AEIOU]/gi);
+  return vowels.length;
+}
+
+Entry.prototype.consonantCount = function() {
+  var vowels = [];
+  vowels = this.body.match(/[b-df-hj-np-tv-z]/gi);
+  return vowels.length;
+}
+
 exports.entryModule = Entry;
 
 },{}],2:[function(require,module,exports){
@@ -20,8 +32,12 @@ $(document).ready(function() {
     var title = $('#title').val();
     var body = $('#body').val();
     var newEntry = new Entry(title, body);
-    var output = newEntry.wordCount();
-    $('#result').text(output);
+    var wordCount = newEntry.wordCount();
+    var vowelCount = newEntry.vowelCount();
+    var consonantCount = newEntry.consonantCount();
+    $('#wordCount').text(wordCount);
+    $('#vowelCount').text(vowelCount);
+    $('#consonantCount').text(consonantCount);
   });
 });
 
