@@ -14,5 +14,11 @@ $(document).ready(function() {
     $('#vowelCount').text(vowelCount);
     $('#consonantCount').text(consonantCount);
     $('#teaserText').text(teaser);
+    $('#title-display').text(title);
+    $('#body-display').text(body);
+
+    $('#entry-display').show();
+    $('#entry-form').hide();
   });
+
 });

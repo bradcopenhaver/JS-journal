@@ -3,19 +3,26 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Journal</title>
   </head>
   <body>
-    <form id="journal-form">
-      <label for="title">Enter a title:</label>
-      <input id="title" type="text">
-      <label for="body">Create a journal entry:</label>
-      <input id="body" type="text">
-      <button type="submit">Submit</button>
-    </form>
-    <h4>Word Count:<span id="wordCount"></span></h4>
-    <h4>Vowel Count:<span id="vowelCount"></span></h4>
-    <h4>Consonant Count:<span id="consonantCount"></span></h4>
-    <p id="teaserText"></p>
+    <div id="entry-form">
+      <form id="journal-form">
+        <label for="title">Enter a title:</label>
+        <input id="title" type="text">
+        <label for="body">Create a journal entry:</label>
+        <input id="body" type="text">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="entry-display">
+      <h3 id="title-display"></h3>
+      <h5 id="teaserText"></h5>
+      <p id="body-display"></p>
+      <h4>Word Count:<span id="wordCount"></span></h4>
+      <h4>Vowel Count:<span id="vowelCount"></span></h4>
+      <h4>Consonant Count:<span id="consonantCount"></span></h4>
+    </div>
   </body>
 </html>

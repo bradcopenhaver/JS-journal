@@ -13,13 +13,13 @@ Entry.prototype.vowelCount = function() {
   var vowels = [];
   vowels = this.body.match(/[AEIOU]/gi);
   return vowels.length;
-}
+};
 
 Entry.prototype.consonantCount = function() {
   var vowels = [];
   vowels = this.body.match(/[b-df-hj-np-tv-z]/gi);
   return vowels.length;
-}
+};
 
 Entry.prototype.getTeaser = function() {
   var teaser = [];
@@ -34,7 +34,7 @@ Entry.prototype.getTeaser = function() {
     }
     return output + "...";
   }
-}
+};
 
 exports.entryModule = Entry;
 
@@ -55,7 +55,13 @@ $(document).ready(function() {
     $('#vowelCount').text(vowelCount);
     $('#consonantCount').text(consonantCount);
     $('#teaserText').text(teaser);
+    $('#title-display').text(title);
+    $('#body-display').text(body);
+
+    $('#entry-display').show();
+    $('#entry-form').hide();
   });
+
 });
 
 },{"./../js/journal.js":1}]},{},[2]);

@@ -12,13 +12,13 @@ Entry.prototype.vowelCount = function() {
   var vowels = [];
   vowels = this.body.match(/[AEIOU]/gi);
   return vowels.length;
-}
+};
 
 Entry.prototype.consonantCount = function() {
   var vowels = [];
   vowels = this.body.match(/[b-df-hj-np-tv-z]/gi);
   return vowels.length;
-}
+};
 
 Entry.prototype.getTeaser = function() {
   var teaser = [];
@@ -33,6 +33,6 @@ Entry.prototype.getTeaser = function() {
     }
     return output + "...";
   }
-}
+};
 
 exports.entryModule = Entry;
