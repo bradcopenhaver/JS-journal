@@ -21,6 +21,21 @@ Entry.prototype.consonantCount = function() {
   return vowels.length;
 }
 
+Entry.prototype.getTeaser = function() {
+  var teaser = [];
+  teaser = this.body.split(/([\.\!\?])/);
+  var sentence = teaser[0].split(" ");
+  if (sentence.length <= 8) {
+    return teaser[0] + teaser[1];
+  } else if (sentence.length > 8) {
+    var output = "";
+    for (i=0; i < 8; i++){
+      output = output.concat(sentence[i] + " ");
+    }
+    return output + "...";
+  }
+}
+
 exports.entryModule = Entry;
 
 },{}],2:[function(require,module,exports){
@@ -35,9 +50,11 @@ $(document).ready(function() {
     var wordCount = newEntry.wordCount();
     var vowelCount = newEntry.vowelCount();
     var consonantCount = newEntry.consonantCount();
+    var teaser = newEntry.getTeaser();
     $('#wordCount').text(wordCount);
     $('#vowelCount').text(vowelCount);
     $('#consonantCount').text(consonantCount);
+    $('#teaserText').text(teaser);
   });
 });
 

@@ -20,4 +20,19 @@ Entry.prototype.consonantCount = function() {
   return vowels.length;
 }
 
+Entry.prototype.getTeaser = function() {
+  var teaser = [];
+  teaser = this.body.split(/([\.\!\?])/);
+  var sentence = teaser[0].split(" ");
+  if (sentence.length <= 8) {
+    return teaser[0] + teaser[1];
+  } else if (sentence.length > 8) {
+    var output = "";
+    for (i=0; i < 8; i++){
+      output = output.concat(sentence[i] + " ");
+    }
+    return output + "...";
+  }
+}
+
 exports.entryModule = Entry;
